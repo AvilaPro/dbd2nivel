@@ -1,0 +1,862 @@
+PRAGMA foreign_keys = '1';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+PRAGMA encoding
+SELECT COUNT(*) FROM (select pais.nombre, count(*) as ciudades from ciudad
+inner join pais on pais.id = ciudad.idpais
+group by idpais
+order by pais.nombre asc);
+select pais.nombre, count(*) as ciudades from ciudad
+inner join pais on pais.id = ciudad.idpais
+group by idpais
+order by pais.nombre asc LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+PRAGMA auto_vacuum
+PRAGMA automatic_index
+PRAGMA checkpoint_fullfsync
+PRAGMA foreign_keys
+PRAGMA fullfsync
+PRAGMA ignore_check_constraints
+PRAGMA journal_mode
+PRAGMA journal_size_limit
+PRAGMA locking_mode
+PRAGMA max_page_count
+PRAGMA page_size
+PRAGMA recursive_triggers
+PRAGMA secure_delete
+PRAGMA synchronous
+PRAGMA temp_store
+PRAGMA user_version
+PRAGMA wal_autocheckpoint
+SELECT 'x' NOT LIKE 'X'
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" WHERE "id" LIKE '%1%' ESCAPE '\' ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" WHERE "id" LIKE '%1%' ESCAPE '\' ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" WHERE "id" LIKE '%1%' ESCAPE '\' AND "nombre" LIKE '%cara%' ESCAPE '\' ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" WHERE "id" LIKE '%1%' ESCAPE '\' AND "nombre" LIKE '%cara%' ESCAPE '\' ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" WHERE "id" LIKE '%1%' ESCAPE '\' AND "nombre" LIKE '%caracas%' ESCAPE '\' ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" WHERE "id" LIKE '%1%' ESCAPE '\' AND "nombre" LIKE '%caracas%' ESCAPE '\' ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" WHERE "id" LIKE '%1%' ESCAPE '\' AND "nombre" LIKE '%caracas%' ESCAPE '\' AND "idpais" LIKE '%1%' ESCAPE '\' ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" WHERE "id" LIKE '%1%' ESCAPE '\' AND "nombre" LIKE '%caracas%' ESCAPE '\' AND "idpais" LIKE '%1%' ESCAPE '\' ORDER BY "_rowid_" ASC);
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+SELECT "_rowid_",* FROM "main"."ciudad" WHERE "nombre" LIKE '%caracas%' ESCAPE '\' AND "idpais" LIKE '%1%' ESCAPE '\' ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" WHERE "nombre" LIKE '%caracas%' ESCAPE '\' AND "idpais" LIKE '%1%' ESCAPE '\' ORDER BY "_rowid_" ASC);
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" WHERE "idpais" LIKE '%1%' ESCAPE '\' ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" WHERE "idpais" LIKE '%1%' ESCAPE '\' ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+DELETE FROM "main"."ciudad" WHERE _rowid_ IN ('2');
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='1';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='1';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='1';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='2';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='2';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='2';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='2';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='3';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='3';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='3';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='4';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='4';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='4';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='5';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='5';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='5';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='6';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='6';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='6';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='7';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='7';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='7';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='8';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='8';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='8';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='9';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='9';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='9';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='10';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='10';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='10';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='11';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='11';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='11';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='12';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='12';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='12';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='13';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='13';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='13';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='14';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='14';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='14';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='15';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='15';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='14';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='15';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='15';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='16';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='16';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='16';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='17';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='17';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='17';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='18';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='18';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='18';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='19';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='19';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='19';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='20';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='20';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='20';
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital") VALUES (NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='1';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='1';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='1';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital") VALUES (NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='2';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='2';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='2';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital") VALUES (NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='3';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='3';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='3';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital") VALUES (NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='4';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='4';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='4';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital") VALUES (NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='5';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='5';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='5';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='5';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='5';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital") VALUES (NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='6';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='6';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='6';
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital") VALUES (NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='7';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='7';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='7';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital") VALUES (NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='8';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='8';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='8';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital") VALUES (NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='9';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='9';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='9';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital") VALUES (NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='10';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='10';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='10';
+SELECT COUNT(*) FROM (select pais.nombre, count(*) as ciudades from ciudad
+inner join pais on pais.id = ciudad.idpais
+group by idpais
+order by pais.nombre asc);
+select pais.nombre, count(*) as ciudades from ciudad
+inner join pais on pais.id = ciudad.idpais
+group by idpais
+order by pais.nombre asc LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='21';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='21';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='21';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='22';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='22';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='22';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='23';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='23';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='23';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='24';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='24';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='24';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='25';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='25';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='25';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='26';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='26';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='26';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='27';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='27';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='27';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='28';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='28';
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='28';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='29';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='29';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='29';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='30';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='30';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='30';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='31';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='31';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='31';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='31';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='31';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='32';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='32';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='32';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='33';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='33';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='33';
+SELECT COUNT(*) FROM (select pais.nombre, count(*) as ciudades from ciudad
+inner join pais on pais.id = ciudad.idpais
+group by idpais
+order by pais.nombre asc);
+select pais.nombre, count(*) as ciudades from ciudad
+inner join pais on pais.id = ciudad.idpais
+group by idpais
+order by pais.nombre asc LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+PRAGMA auto_vacuum
+PRAGMA automatic_index
+PRAGMA checkpoint_fullfsync
+PRAGMA foreign_keys
+PRAGMA fullfsync
+PRAGMA ignore_check_constraints
+PRAGMA journal_mode
+PRAGMA journal_size_limit
+PRAGMA locking_mode
+PRAGMA max_page_count
+PRAGMA page_size
+PRAGMA recursive_triggers
+PRAGMA secure_delete
+PRAGMA synchronous
+PRAGMA temp_store
+PRAGMA user_version
+PRAGMA wal_autocheckpoint
+SELECT 'x' NOT LIKE 'X'
+PRAGMA foreign_keys
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+PRAGMA foreign_keys
+PRAGMA foreign_keys = '0';
+PRAGMA foreign_keys
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+PRAGMA "main".foreign_key_check
+PRAGMA foreign_keys = '1';
+PRAGMA foreign_keys
+PRAGMA foreign_keys = '0';
+PRAGMA foreign_keys
+CREATE TABLE "sqlb_temp_table_1" (
+	"id"	INTEGER,
+	"nombre"	INTEGER,
+	"idpais"	INTEGER
+);
+INSERT INTO "main"."sqlb_temp_table_1" SELECT "id","nombre","idpais" FROM "main"."ciudad";
+PRAGMA defer_foreign_keys
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."ciudad";
+ALTER TABLE "main"."sqlb_temp_table_1" RENAME TO "ciudad"
+PRAGMA defer_foreign_keys = '0';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+CREATE TABLE "sqlb_temp_table_2" (
+	"id"	INTEGER,
+	"nombre"	TEXT,
+	"idpais"	INTEGER
+);
+INSERT INTO "main"."sqlb_temp_table_2" SELECT "id","nombre","idpais" FROM "main"."ciudad";
+PRAGMA defer_foreign_keys
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."ciudad";
+ALTER TABLE "main"."sqlb_temp_table_2" RENAME TO "ciudad"
+PRAGMA defer_foreign_keys = '0';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+CREATE TABLE "sqlb_temp_table_3" (
+	"id"	INTEGER,
+	"nombre"	TEXT,
+	"idpais"	INTEGER
+);
+INSERT INTO "main"."sqlb_temp_table_3" SELECT "id","nombre","idpais" FROM "main"."ciudad";
+PRAGMA defer_foreign_keys
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."ciudad";
+ALTER TABLE "main"."sqlb_temp_table_3" RENAME TO "ciudad"
+PRAGMA defer_foreign_keys = '0';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+PRAGMA foreign_keys = '1';
+PRAGMA foreign_keys
+PRAGMA foreign_keys = '0';
+PRAGMA foreign_keys
+CREATE TABLE "sqlb_temp_table_4" (
+	"id"	INTEGER,
+	"nombre"	INTEGER,
+	"idciudadcapital"	INTEGER
+);
+INSERT INTO "main"."sqlb_temp_table_4" SELECT "id","nombre","idciudadcapital" FROM "main"."pais";
+PRAGMA defer_foreign_keys
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."pais";
+ALTER TABLE "main"."sqlb_temp_table_4" RENAME TO "pais"
+PRAGMA defer_foreign_keys = '0';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+CREATE TABLE "sqlb_temp_table_5" (
+	"id"	INTEGER,
+	"nombre"	TEXT,
+	"idciudadcapital"	INTEGER
+);
+INSERT INTO "main"."sqlb_temp_table_5" SELECT "id","nombre","idciudadcapital" FROM "main"."pais";
+PRAGMA defer_foreign_keys
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."pais";
+ALTER TABLE "main"."sqlb_temp_table_5" RENAME TO "pais"
+PRAGMA defer_foreign_keys = '0';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+CREATE TABLE "sqlb_temp_table_6" (
+	"id"	INTEGER,
+	"nombre"	TEXT,
+	"idciudadcapital"	INTEGER
+);
+INSERT INTO "main"."sqlb_temp_table_6" SELECT "id","nombre","idciudadcapital" FROM "main"."pais";
+PRAGMA defer_foreign_keys
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."pais";
+ALTER TABLE "main"."sqlb_temp_table_6" RENAME TO "pais"
+PRAGMA defer_foreign_keys = '0';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+CREATE TABLE "sqlb_temp_table_7" (
+	"id"	INTEGER,
+	"nombre"	TEXT,
+	"idciudadcapital"	INTEGER
+);
+INSERT INTO "main"."sqlb_temp_table_7" SELECT "id","nombre","idciudadcapital" FROM "main"."pais";
+PRAGMA defer_foreign_keys
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."pais";
+ALTER TABLE "main"."sqlb_temp_table_7" RENAME TO "pais"
+PRAGMA defer_foreign_keys = '0';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+PRAGMA foreign_keys = '1';
+PRAGMA foreign_keys
+CREATE TABLE "continente" (
+	"id"	INTEGER,
+	"nombre"	INTEGER
+);
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA foreign_keys
+PRAGMA foreign_keys = '0';
+PRAGMA foreign_keys
+ALTER TABLE "main"."pais" ADD COLUMN 	"Field4"	INTEGER
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+CREATE TABLE "sqlb_temp_table_8" (
+	"id"	INTEGER,
+	"nombre"	TEXT,
+	"idciudadcapital"	INTEGER,
+	"idcontinente"	INTEGER
+);
+INSERT INTO "main"."sqlb_temp_table_8" SELECT "id","nombre","idciudadcapital","Field4" FROM "main"."pais";
+PRAGMA defer_foreign_keys
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."pais";
+ALTER TABLE "main"."sqlb_temp_table_8" RENAME TO "pais"
+PRAGMA defer_foreign_keys = '0';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+PRAGMA foreign_keys = '1';
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='1';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='2';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='3';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='4';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='5';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='6';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='7';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='8';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='9';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='10';
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."continente" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."continente" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+INSERT INTO "main"."continente"("id","nombre") VALUES (NULL,NULL);
+UPDATE "main"."continente" SET "id"=? WHERE "_rowid_"='1';
+UPDATE "main"."continente" SET "id"=? WHERE "_rowid_"='1';
+UPDATE "main"."continente" SET "nombre"=? WHERE "_rowid_"='1';
+INSERT INTO "main"."continente"("id","nombre") VALUES (NULL,NULL);
+UPDATE "main"."continente" SET "id"=? WHERE "_rowid_"='2';
+UPDATE "main"."continente" SET "nombre"=? WHERE "_rowid_"='2';
+INSERT INTO "main"."continente"("id","nombre") VALUES (NULL,NULL);
+UPDATE "main"."continente" SET "id"=? WHERE "_rowid_"='3';
+UPDATE "main"."continente" SET "nombre"=? WHERE "_rowid_"='3';
+PRAGMA auto_vacuum
+PRAGMA automatic_index
+PRAGMA checkpoint_fullfsync
+PRAGMA foreign_keys
+PRAGMA fullfsync
+PRAGMA ignore_check_constraints
+PRAGMA journal_mode
+PRAGMA journal_size_limit
+PRAGMA locking_mode
+PRAGMA max_page_count
+PRAGMA page_size
+PRAGMA recursive_triggers
+PRAGMA secure_delete
+PRAGMA synchronous
+PRAGMA temp_store
+PRAGMA user_version
+PRAGMA wal_autocheckpoint
+SELECT 'x' NOT LIKE 'X'
+SELECT "_rowid_",* FROM "main"."continente" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."continente" ORDER BY "_rowid_" ASC);
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital","idcontinente") VALUES (NULL,NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='11';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='11';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='11';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='11';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital","idcontinente") VALUES (NULL,NULL,NULL,NULL);
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='11';
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='12';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='12';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='12';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='12';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital","idcontinente") VALUES (NULL,NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='13';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='13';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='13';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='13';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital","idcontinente") VALUES (NULL,NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='14';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='14';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='14';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital","idcontinente") VALUES (NULL,NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='15';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='15';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='15';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='15';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='15';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='15';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital","idcontinente") VALUES (NULL,NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='16';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='16';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='16';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='14';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital","idcontinente") VALUES (NULL,NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='17';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='17';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='17';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='17';
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='34';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='34';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='34';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='35';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='35';
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."continente" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."continente" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='11';
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='12';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='13';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='14';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='15';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='16';
+UPDATE "main"."pais" SET "idciudadcapital"=? WHERE "_rowid_"='17';
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='35';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='35';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='36';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='36';
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='36';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='36';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='37';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='37';
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='37';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='37';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='38';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='38';
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='38';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='38';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='39';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='39';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='39';
+INSERT INTO "main"."ciudad"("id","nombre","idpais") VALUES (NULL,NULL,NULL);
+UPDATE "main"."ciudad" SET "id"=? WHERE "_rowid_"='40';
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='40';
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+UPDATE "main"."ciudad" SET "nombre"=? WHERE "_rowid_"='40';
+UPDATE "main"."ciudad" SET "idpais"=? WHERE "_rowid_"='40';
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (select continente.nombre as continente, count(*) as paises
+from pais
+inner join continente on continente.id = pais.idcontinente
+group by idcontinente
+order by continente.nombre asc);
+select continente.nombre as continente, count(*) as paises
+from pais
+inner join continente on continente.id = pais.idcontinente
+group by idcontinente
+order by continente.nombre asc LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA foreign_keys
+PRAGMA foreign_keys = '0';
+PRAGMA foreign_keys
+ALTER TABLE "main"."ciudad" ADD COLUMN 	"Field4"	INTEGER
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+CREATE TABLE "sqlb_temp_table_9" (
+	"id"	INTEGER,
+	"nombre"	TEXT,
+	"idpais"	INTEGER,
+	"habitantes"	INTEGER
+);
+INSERT INTO "main"."sqlb_temp_table_9" SELECT "id","nombre","idpais","Field4" FROM "main"."ciudad";
+PRAGMA defer_foreign_keys
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."ciudad";
+ALTER TABLE "main"."sqlb_temp_table_9" RENAME TO "ciudad"
+PRAGMA defer_foreign_keys = '0';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+PRAGMA foreign_keys = '1';
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='1';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='2';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='3';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='4';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='5';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='6';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='7';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='8';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='9';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='10';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='11';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='12';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='13';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='14';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='15';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='16';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='17';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='18';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='19';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='20';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='21';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='22';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='23';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='24';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='25';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='26';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='27';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='28';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='29';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='30';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='31';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='32';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='33';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='34';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='35';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='36';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='37';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='38';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='39';
+UPDATE "main"."ciudad" SET "habitantes"=? WHERE "_rowid_"='40';
+SELECT COUNT(*) FROM (select pais.nombre, sum(ciudad.habitantes)
+from pais
+inner join ciudad on ciudad.idpais = pais.id
+group by pais.id);
+select pais.nombre, sum(ciudad.habitantes)
+from pais
+inner join ciudad on ciudad.idpais = pais.id
+group by pais.id LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM (select
+	continente.nombre as Continente,
+	sum(ciudad.habitantes) as "Total habitantes",
+	count(*) as "Nro de Paises"
+from
+	pais
+	inner join
+		ciudad
+	on
+		ciudad.idpais = pais.id
+	inner join
+		continente
+	on continente.id = pais.idcontinente
+group by
+	continente.nombre);
+select
+	continente.nombre as Continente,
+	sum(ciudad.habitantes) as "Total habitantes",
+	count(*) as "Nro de Paises"
+from
+	pais
+	inner join
+		ciudad
+	on
+		ciudad.idpais = pais.id
+	inner join
+		continente
+	on continente.id = pais.idcontinente
+group by
+	continente.nombre LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."ciudad" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."continente" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."continente" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+PRAGMA foreign_keys
+SELECT 'x' NOT LIKE 'X'
+PRAGMA temp_store
+PRAGMA wal_autocheckpoint
+PRAGMA synchronous
+PRAGMA database_list;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM (select 
+	pais.nombre,
+	(select count(*) from ciudad where ciudad.idpais = pais.id) as "total ciudades",
+	(select sum(ciudad.habitantes) from ciudad where ciudad.idpais = pais.id) as "total habitantes"
+	from pais
+order by pais.nombre asc);
+select 
+	pais.nombre,
+	(select count(*) from ciudad where ciudad.idpais = pais.id) as "total ciudades",
+	(select sum(ciudad.habitantes) from ciudad where ciudad.idpais = pais.id) as "total habitantes"
+	from pais
+order by pais.nombre asc LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM (select
+	pais.nombre,
+	case when
+		pais.idciudadcapital is null
+	then
+		"no tiene"
+	else
+	(select ciudad.nombre from ciudad where pais.idciudadcapital = ciudad.id)
+	end as Capital
+	from
+		pais);
+select
+	pais.nombre,
+	case when
+		pais.idciudadcapital is null
+	then
+		"no tiene"
+	else
+	(select ciudad.nombre from ciudad where pais.idciudadcapital = ciudad.id)
+	end as Capital
+	from
+		pais LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM (SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC);
+SELECT "_rowid_",* FROM "main"."pais" ORDER BY "_rowid_" ASC LIMIT 0, 49999;
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='17';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='17';
+INSERT INTO "main"."pais"("id","nombre","idciudadcapital","idcontinente") VALUES (NULL,NULL,NULL,NULL);
+UPDATE "main"."pais" SET "id"=? WHERE "_rowid_"='18';
+UPDATE "main"."pais" SET "nombre"=? WHERE "_rowid_"='18';
+UPDATE "main"."pais" SET "idcontinente"=? WHERE "_rowid_"='18';
+SELECT COUNT(*) FROM (select
+	pais.nombre,
+	case when
+		pais.idciudadcapital is null
+	then
+		"no tiene"
+	else
+	(select ciudad.nombre from ciudad where pais.idciudadcapital = ciudad.id)
+	end as Capital
+	from
+		pais);
+select
+	pais.nombre,
+	case when
+		pais.idciudadcapital is null
+	then
+		"no tiene"
+	else
+	(select ciudad.nombre from ciudad where pais.idciudadcapital = ciudad.id)
+	end as Capital
+	from
+		pais LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM (select
+	nombre, habitantes,
+	(select min(habitantes) from ciudad) as Minimo,
+	(select avg(habitantes) from ciudad) as Promedio
+from
+	ciudad
+where
+	habitantes=(select min(habitantes) from ciudad) or
+	habitantes>(select avg(habitantes) from ciudad));
+select
+	nombre, habitantes,
+	(select min(habitantes) from ciudad) as Minimo,
+	(select avg(habitantes) from ciudad) as Promedio
+from
+	ciudad
+where
+	habitantes=(select min(habitantes) from ciudad) or
+	habitantes>(select avg(habitantes) from ciudad) LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA foreign_keys
+SELECT 'x' NOT LIKE 'X'
+PRAGMA temp_store
+PRAGMA wal_autocheckpoint
+PRAGMA synchronous
+PRAGMA database_list;
