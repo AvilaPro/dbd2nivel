@@ -1,48 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="D:/EDUARDO/CURSO PROGRAMADOR/DBD 2/dbd2nivel/clase4/clase4.db" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="571"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="pais"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="ciudad" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values><column index="1" value=""/><column index="2" value=""/><column index="3" value=""/></filter_values><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="main" name="continente" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="main" name="pais" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table></browse_table_settings></tab_browse><tab_sql><sql name="sql1.sql">select pais.nombre, count(*) as ciudades from ciudad
-inner join pais on pais.id = ciudad.idpais
-group by idpais
-order by pais.nombre asc</sql><sql name="sql2.sql">select continente.nombre as continente, count(*) as paises
-from pais
-inner join continente on continente.id = pais.idcontinente
-group by idcontinente
-order by continente.nombre asc</sql><sql name="sql3.sql">select pais.nombre, sum(ciudad.habitantes)
-from pais
-inner join ciudad on ciudad.idpais = pais.id
-group by pais.id</sql><sql name="sql4.sql">select
-	continente.nombre as Continente,
-	sum(ciudad.habitantes) as &quot;Total habitantes&quot;,
-	count(*) as &quot;Nro de Paises&quot;
-from
-	pais
-	inner join
-		ciudad
-	on
-		ciudad.idpais = pais.id
-	inner join
-		continente
-	on continente.id = pais.idcontinente
-group by
-	continente.nombre</sql><sql name="sql5.sql">select 
-	pais.nombre,
-	(select count(*) from ciudad where ciudad.idpais = pais.id) as &quot;total ciudades&quot;,
-	(select sum(ciudad.habitantes) from ciudad where ciudad.idpais = pais.id) as &quot;total habitantes&quot;
-	from pais
-order by pais.nombre asc</sql><sql name="sql6.sql">select
-	pais.nombre,
-	case when
-		pais.idciudadcapital is null
-	then
-		&quot;no tiene&quot;
-	else
-	(select ciudad.nombre from ciudad where pais.idciudadcapital = ciudad.id)
-	end as Capital
-	from
-		pais</sql><sql name="sql7.sql">select
-	nombre, habitantes,
-	(select min(habitantes) from ciudad) as Minimo,
-	(select avg(habitantes) from ciudad) as Promedio
-from
-	ciudad
-where
-	habitantes=(select min(habitantes) from ciudad) or
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="D:/EDUARDO/CURSO PROGRAMADOR/DBD 2/dbd2nivel/clase4/clase4.db" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached><db schema="desafio4dbd2" path="D:\EDUARDO\CURSO PROGRAMADOR\DBD 2\dbd2nivel\DESAFIOS\Desafio 4\desafio4dbd2.db"/></attached><window><current_tab id="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="571"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/><expanded_item id="4" parent="1"/></tab_structure><tab_browse><current_table name="pais"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="ciudad" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values><column index="1" value=""/><column index="2" value=""/><column index="3" value=""/></filter_values><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="main" name="continente" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="main" name="pais" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table></browse_table_settings></tab_browse><tab_sql><sql name="sql1.sql">select pais.nombre, count(*) as ciudades from ciudad
+inner join pais on pais.id = ciudad.idpais
+group by idpais
+order by pais.nombre asc</sql><sql name="sql2.sql">select continente.nombre as continente, count(*) as paises
+from pais
+inner join continente on continente.id = pais.idcontinente
+group by idcontinente
+order by continente.nombre asc</sql><sql name="sql3.sql">select pais.nombre, sum(ciudad.habitantes)
+from pais
+inner join ciudad on ciudad.idpais = pais.id
+group by pais.id</sql><sql name="sql4.sql">select
+	continente.nombre as Continente,
+	sum(ciudad.habitantes) as &quot;Total habitantes&quot;,
+	count(*) as &quot;Nro de Paises&quot;
+from
+	pais
+	inner join
+		ciudad
+	on
+		ciudad.idpais = pais.id
+	inner join
+		continente
+	on continente.id = pais.idcontinente
+group by
+	continente.nombre</sql><sql name="sql5.sql">select 
+	pais.nombre,
+	(select count(*) from ciudad where ciudad.idpais = pais.id) as &quot;total ciudades&quot;,
+	(select sum(ciudad.habitantes) from ciudad where ciudad.idpais = pais.id) as &quot;total habitantes&quot;
+	from pais
+order by pais.nombre asc</sql><sql name="sql6.sql">select
+	pais.nombre,
+	case when
+		pais.idciudadcapital is null
+	then
+		&quot;no tiene&quot;
+	else
+	(select ciudad.nombre from ciudad where pais.idciudadcapital = ciudad.id)
+	end as Capital
+	from
+		pais</sql><sql name="sql7.sql">select
+	nombre, habitantes,
+	(select min(habitantes) from ciudad) as Minimo,
+	(select avg(habitantes) from ciudad) as Promedio
+from
+	ciudad
+where
+	habitantes=(select min(habitantes) from ciudad) or
 	habitantes&gt;(select avg(habitantes) from ciudad)</sql><current_tab id="6"/></tab_sql></sqlb_project>
