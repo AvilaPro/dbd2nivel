@@ -1,0 +1,1 @@
+select min(habitantes), max(habitantes), min(nombre) from ciudad
