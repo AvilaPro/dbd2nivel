@@ -1,0 +1,14 @@
+Enunciado de la tarea 2 de la sección 2885
+Utilizando la base de datos adjunta, realice las siguientes actividades. Debe enviar un archivo con todas las instrucciones SQL, colocando un comentario de cada instruccion:
+1.- Muestre un listado de los clientes cuyo primer nombre sea "juan" y vivan en Brasil, ordenado por nombre de forma descendente
+
+2.- Muestre un listado de los clientes que no tengan correo y vivan en Venezuela o Colombia, ordenado por RIF de forma ascendente
+
+3.- Muestre un listado de articulos no excentos (cuyo valor sea diferente de 1), que ademas tenga una existencia que este por arriba del stock minimo y debajo del stockmaximo (utilizando between)
+
+4.- Muestre un listado de facturas que hayan facturadas en el mes 04 y que el monto sea superior a 6000, ordenado por rif y por el monto
+
+5.- Elimine las facturas del año 2018 pero que el monto sea menor de 5000
+
+Descargar Archivo Adjunto
+http://www.cadif1.com/alumno/descargar_enunciado_tarea/2885/2/2885_2.rar
