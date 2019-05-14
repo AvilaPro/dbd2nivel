@@ -1,0 +1,15 @@
+Enunciado de la tarea 3 de la sección 2885
+
+Utilizando la base de datos adjunta, escriba las instrucciones SQL que respondan a los siguientes requerimientos:
+
+1.- Mostrar un listado de articulos, mostrando el codigo del articulo, el nombre del articulo y el nombre de la categoria a la que pertenece el articulos. Debe mostrar solo los articulos que tengan existencia menor al stock minimo y que esten ordenados por existencia de forma descendente
+
+2.- Mostrar el precio promedio de los articulos
+
+3.- Mostrar un listado de Facturas, donde aparezca el numero de la factura, el rif del cliente, el nombre del cliente, el nombre del pais donde vive el cliente y el monto de la factura
+
+4.- Mostrar el monto total factura a los clientes que viven en Venezuela
+
+5.- Mostrar el monto minimo y monto maximo facturado a los clientes que compraron en un mes de Abril y que cuyo nombre sea Juan
+
+Descargar Archivo Adjunto (Archivo adjunto en la carpeta)

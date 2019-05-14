@@ -1,4 +1,5 @@
 Enunciado de la tarea 1 de la sección 2885
+
 Crear una base de datos nueva de SQLite y usando Db Browse For SQLite realice las siguientes actividades (enviar un archivo SQL con todas las instrucciones):
 
 1.- Escriba las instrucciones SQL para crear las siguientes tablas: una que almacene los datos de las carreras que se pueden dictar en una universidad, que contenga los siguientes campos: id (auto incremental), cedula (text, not null), nombre (text, not null), numero de semestres (integer, not null, valor por defecto 10), costo (real, not null, por defecto 0). Otra tabla que almacene los datos de los alumnos de una universidad, que contenga los siguientes campos: id (auto incremental), cedula (text, not null), nombre (text, not null), ano de ingreso (integer, not null, valor por defecto 2019), edad (integer, not null, por defecto 17), nota promedio (real, not null, por defecto 0), correo (text), idcarrera (integer, not null, clave foranea de Carrera). Hacer print screen que evidencie que creo las tablas usando instrucciones SQL y no usando la interfaz grafica
