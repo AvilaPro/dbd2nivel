@@ -1,0 +1,28 @@
+Enunciado de la tarea 4 de la sección 2885
+
+Crear una base de datos nueva y ejecutar en esta el script adjunto. Obtendrá las 
+siguientes tablas: factura, producto_factura, producto, cliente, proveedor e iva. 
+Escriba y pruebe las siguientes consultas para responder a los siguientes requerimientos:
+
+nota: debe enviar un archivo de texto con las instrucciones SQL que responden a 
+cada objetivo, con sus respectivos comentarios.
+
+1.- Escriba una consulta SELECT y utilice las funciones EXISTS/NOT EXISTS para determinar:
+ -cuales son las facturas que no tienen productos facturados. -cuales son los clientes 
+que también son proveedores.
+
+2.- Obtenga un listado de clientes que tengan al menos 3 facturas, con los siguientes 
+campos: el rif, el nombre y la cantidad de facturas del cliente.
+
+3.- Obtenga un listado de facturas, mostrando: el numero de factura, el nombre del 
+cliente y el total_final, solo de las facturas cuyo total_final esta por encima del 
+promedio .
+
+4.- Muestre todas las facturas cuyo total_final sea mayor al de todas las facturas 
+la primera semana de enero/2017
+
+5.- Muestre un listado de los productos facturados en el año 2017, cuyo precio es 
+mayor alguno de los productos que hayan sido facturados en 2016. Debe mostrar el 
+nombre del producto, el precio y el nombre del cliente que lo compro
+
+Descargar Archivo Adjunto
