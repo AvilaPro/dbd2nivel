@@ -1,0 +1,16 @@
+--esta parte consulta las facturas que no tienen productos facturados, mostrando su id
+select
+	id
+from
+	factura X
+where
+	not exists
+(select * from producto_factura Y where X.id=Y.id_factura);
+--esta parte consulta los clientes que también son proveedores mostrando su nombre y rif.
+SELECT
+	nombre,rif
+FROM
+	cliente Z
+WHERE
+	EXISTS
+(SELECT * from proveedor W where Z.rif=W.rif)

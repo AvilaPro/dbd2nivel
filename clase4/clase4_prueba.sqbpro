@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="D:/EDUARDO/CURSO PROGRAMADOR/DBD 2/dbd2nivel/clase4/clase4.db" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached><db schema="desafio4dbd2" path="D:\EDUARDO\CURSO PROGRAMADOR\DBD 2\dbd2nivel\DESAFIOS\Desafio 4\desafio4dbd2.db"/></attached><window><current_tab id="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="571"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/><expanded_item id="4" parent="1"/></tab_structure><tab_browse><current_table name="pais"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="ciudad" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values><column index="1" value=""/><column index="2" value=""/><column index="3" value=""/></filter_values><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="main" name="continente" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="main" name="pais" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table></browse_table_settings></tab_browse><tab_sql><sql name="sql1.sql">select pais.nombre, count(*) as ciudades from ciudad
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Eduardo Mejias/Documents/EDUARDO/CURSO PROGRAMACION/DISEÑO DE BASE DE DATOS 2/dbd2nivel/clase4/clase4.db" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached><db schema="d" path="C:\Users\Eduardo Mejias\Documents\EDUARDO\CURSO PROGRAMACION\DISEÑO DE BASE DE DATOS 2\dbd2nivel\DESAFIOS\Desafio 4\desafio4dbd2.db"/></attached><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1039"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/><expanded_item id="4" parent="1"/></tab_structure><tab_browse><current_table name="pais"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="ciudad" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values><column index="1" value=""/><column index="2" value=""/><column index="3" value=""/></filter_values><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="main" name="continente" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="d" name="cliente" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="d" name="factura" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="d" name="producto_factura" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="d" name="proveedor" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="main" name="pais" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table></browse_table_settings></tab_browse><tab_sql><sql name="sql1.sql">select pais.nombre, count(*) as ciudades from ciudad
 inner join pais on pais.id = ciudad.idpais
 group by idpais
 order by pais.nombre asc</sql><sql name="sql2.sql">select continente.nombre as continente, count(*) as paises
@@ -45,4 +45,36 @@ from
 	ciudad
 where
 	habitantes=(select min(habitantes) from ciudad) or
-	habitantes&gt;(select avg(habitantes) from ciudad)</sql><current_tab id="6"/></tab_sql></sqlb_project>
+	habitantes&gt;(select avg(habitantes) from ciudad)</sql><sql name="sql10.sql">select
+	pais.nombre
+from
+	pais
+where
+	id not in (select idpais from ciudad)</sql><sql name="sql11.sql">select
+	nombre, ciudad.id, (select nombre from pais where ciudad.idpais=pais.id) as pais
+from
+	ciudad
+where
+	id not in(select idciudadcapital from pais where idciudadcapital is not null)</sql><sql name="sql12.sql">select
+	nombre
+from
+	ciudad X
+where
+	not exists
+(select * from pais Y where X.id=Y.idciudadcapital)</sql><sql name="sql1desafio4.sql">--esta parte consulta las facturas que no tienen productos facturados, mostrando su id
+select
+	id
+from
+	d.factura X
+where
+	not exists
+(select * from d.producto_factura Y where X.id=Y.id_factura);
+--esta parte consulta los clientes que también son proveedores mostrando su nombre y rif.
+SELECT
+	nombre,rif
+FROM
+	d.cliente Z
+WHERE
+	EXISTS
+(SELECT * from d.proveedor W where Z.rif=W.rif)
+</sql><current_tab id="10"/></tab_sql></sqlb_project>
